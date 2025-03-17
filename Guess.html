@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(guess-the-number.png);
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+        }
+        .container{
+            height: 450px;
+            width: 300px;
+            background-color: gray;
+            margin-top: 100px;
+            margin-left: 800px;
+            padding: 50px;
+        }
+        .output{
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+        }
+        #number{
+            height: 50px;
+            background-color: white;
+            margin: 20px;
+            display: flex;
+            width: 50px;
+
+        }
+        .cal button{
+            width: 30px;
+            height: 30px;
+            margin-left: 20px; 
+            margin-top: 5px;           
+        }
+        .cals{
+            margin-left: 10px;
+        }
+        .guess button{
+            height: 30px;
+            width: max-content;
+            margin: 20px;
+            margin-left: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="get">Pick a number from 0-10</div>
+        <div id="number"> <input type="" placeholder="Type guess number"></div>
+        <div class="cals">
+            <div class="cal">
+                <button onclick="zero()">0</button>
+                <button onclick="one()">1</button>
+                <button onclick="two()">2</button>
+            </div>
+        
+            <div class="cal">
+                <button onclick="three()">3</button>
+                <button onclick="four()">4</button>
+                <button onclick="five()">5</button>
+            </div>
+            <div class="cal">
+                <button onclick="">6</button>
+                <button onclick="">7</button>
+                <button onclick="">8</button>
+            </div>
+            <div class="cal">
+                <button onclick="">9</button>
+                <button onclick="">10</button>
+                <button onclick="">#</button>
+            </div>
+       </div>
+      <div class="guess"><button onclick="ShowRandomNumber()">Guess</button></div>
+    </div>
+</body>
+</html>
+<script>
+    let output = document.getElementById('get')
+    let output1 = document.getElementById('number')
+
+   function ShowRandomNumber() {
+        let number1 = parseInt(output1.value);
+        let get = Math.ceil(Math.random() * 10)
+
+        if (number1 === get) {
+            output.innerHTML = 'Wow you are correct,your answer is '+ get +'';
+            console.log(output);
+            
+        } else {
+            output.innerHTML = 'Opps you are wrong your answer is '+ get +'';
+        }
+   }
+    function zero() {
+        output1.value += 0;
+    }
+    function one () {
+        output1.value += 1;
+        
+    }
+</script>
